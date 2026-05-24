@@ -21,6 +21,15 @@ int main() {
         //gr[n] = Marsh(tempName1, tempName2, tempNumber);
         n++;
     }
+    List lst;
+
+    for (int i = 0; i < n; i++) {
+        lst.insert_sorted(gr[i]);
+    }
+
+    cout << "\n------LIST------\n";
+    lst.print();
+
     file.close();
     cout << "--------Before--------" << endl;
     for (int i = 0; i < 8; i++) {
