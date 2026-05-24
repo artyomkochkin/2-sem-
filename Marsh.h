@@ -44,13 +44,17 @@ public:
         return os << m.name1 << " " << m.name2 << " " << m.number;
     }
 
+    friend istream& operator>>(istream& os, const Marsh& m) {
+        return os >> m.name1 >> m.name2 >> m.number;
+    }
+
     static bool compName1(const Marsh& m1, const Marsh& m2) {
         return strcmp(m1.name1, m2.name1) < 0;
     }
     static bool compName2(const Marsh& m1, const Marsh& m2) {
         return strcmp(m1.name2, m2.name2) < 0;
     }
-    static bool compNumber(const Marsh& m1, const Marsh& m2) {
+    static bool compNumber(Marsh& m1, Marsh& m2) {
         return m1.number < m2.number;
     }
     static int compNumberQsort(const void* a, const void* b) {
