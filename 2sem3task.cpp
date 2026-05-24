@@ -36,30 +36,30 @@ int main() {
         cout << gr[i] << endl;
     }
   
-    insert(gr, 4, Marsh::compNumber);
-    //select(gr, 4, Marsh::compNumber);
-    //bubbleSort(gr, 4, Marsh::compNumber);
-    //shell(gr, 4, Marsh::compNumber);
-    //qs(gr, 0, 3, Marsh::compNumber);
-    //qsort(gr,4,sizeof(Marsh), Marsh::compAgeQsort);
+    insert(gr, n, Marsh::compNumber);
+    //select(gr, n, Marsh::compNumber);
+    //boobleSort(gr, n, Marsh::compNumber);
+    //shell(gr, n, Marsh::compNumber);
+    //qs(gr, 0, n-1, Marsh::compNumber);
+    //qsort(gr,n,sizeof(Marsh), Marsh::compAgeQsort);
     cout << "--------After--------" << endl;
     for (int i = 0; i < 8; i++) {
         cout << gr[i] << endl;
     }
-    ofstrean out("marsh.bin", ios::binary);
+    ofstream out("marsh.bin", ios::binary);
     out.write((char*)gr, n * sizeof(Marsh));
     out.close();
   
     Marsh temp;
-    ifstrean fin("Marsh.bin", ios::binary);
+    ifstream fin("marsh.bin", ios::binary);
     char search[20];
     cout << "enter nane" << "\n";
-    cin >> search:
+    cin >> search;
     bool found = false;
     while (fin.read((char*)&temp, sizeof(Marsh))){
         if (strcmp(temp.getname1(), search) == 0){
             cout << "\nfound\n";
-            cote << temp << endL;
+            cote << temp << endl;
             found = true;
         }
     }
@@ -67,6 +67,6 @@ int main() {
         cout << "\n not found\n";
     }
     fin.close();
-    return o;
+    return 0;
 
 }
