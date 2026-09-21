@@ -59,7 +59,7 @@ int main() {
     while (fin.read((char*)&temp, sizeof(Marsh))){
         if (strcmp(temp.getname1(), search) == 0){
             cout << "\nfound\n";
-            cote << temp << endl;
+            cout << temp << endl;
             found = true;
         }
     }
