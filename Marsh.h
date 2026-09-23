@@ -44,7 +44,7 @@ public:
         return os << m.name1 << " " << m.name2 << " " << m.number;
     }
 
-    friend istream& operator>>(istream& os, const Marsh& m) {
+    friend istream& operator>>(istream& os, Marsh& m) {
         return os >> m.name1 >> m.name2 >> m.number;
     }
 
